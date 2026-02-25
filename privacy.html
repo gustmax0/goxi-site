@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy — Goxi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --bg-primary: #0D0D14;
+  --bg-card: #151520;
+  --border-subtle: rgba(255,255,255,0.06);
+  --border-accent: rgba(168,85,247,0.3);
+  --purple-500: #A855F7;
+  --purple-400: #C084FC;
+  --purple-600: #9333EA;
+  --purple-glow: rgba(168,85,247,0.15);
+  --text-primary: #FFFFFF;
+  --text-secondary: rgba(255,255,255,0.6);
+  --text-muted: rgba(255,255,255,0.35);
+  --gradient-purple: linear-gradient(135deg, #9333EA, #C084FC);
+  --radius-md: 16px;
+  --radius-lg: 24px;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Inter', -apple-system, sans-serif;
+  background: var(--bg-primary);
+  color: var(--text-secondary);
+  line-height: 1.75;
+  overflow-x: hidden;
+}
+
+/* ═══ NAV ═══ */
+.nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  background: rgba(13,13,20,0.85); backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border-subtle);
+}
+.nav-inner {
+  max-width: 1200px; margin: 0 auto; padding: 0 24px;
+  display: flex; align-items: center; justify-content: space-between; height: 72px;
+}
+.nav-logo {
+  font-size: 24px; font-weight: 900; letter-spacing: -0.5px;
+  text-decoration: none; color: var(--text-primary);
+}
+.nav-logo span {
+  background: var(--gradient-purple); -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.nav-back {
+  color: var(--text-secondary); text-decoration: none; font-size: 14px;
+  font-weight: 500; display: flex; align-items: center; gap: 6px;
+  transition: color 0.2s;
+}
+.nav-back:hover { color: var(--purple-400); }
+
+/* ═══ HERO ═══ */
+.hero {
+  padding: 160px 0 80px; text-align: center;
+  background: radial-gradient(ellipse 60% 40% at 50% 0%, rgba(147,51,234,0.12) 0%, transparent 70%);
+}
+.hero h1 {
+  font-size: clamp(36px, 5vw, 52px); font-weight: 900; color: var(--text-primary);
+  letter-spacing: -1px; line-height: 1.1; margin-bottom: 16px;
+}
+.hero .updated {
+  font-size: 14px; color: var(--text-muted); margin-bottom: 8px;
+}
+
+/* ═══ CONTENT ═══ */
+.content-wrap {
+  max-width: 780px; margin: 0 auto; padding: 0 24px 120px;
+}
+
+.legal-section { margin-bottom: 48px; }
+
+.legal-section h2 {
+  font-size: 22px; font-weight: 800; color: var(--text-primary);
+  margin-bottom: 16px; letter-spacing: -0.3px;
+  padding-bottom: 12px; border-bottom: 1px solid var(--border-subtle);
+}
+
+.legal-section h3 {
+  font-size: 17px; font-weight: 700; color: var(--text-primary);
+  margin: 24px 0 10px; opacity: 0.9;
+}
+
+.legal-section p {
+  margin-bottom: 14px; font-size: 15px; line-height: 1.8;
+}
+
+.legal-section ul {
+  margin: 12px 0 14px 24px; list-style: none;
+}
+.legal-section ul li {
+  position: relative; padding-left: 20px; margin-bottom: 8px; font-size: 15px;
+}
+.legal-section ul li::before {
+  content: ''; position: absolute; left: 0; top: 10px;
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--purple-500);
+}
+
+.legal-section a {
+  color: var(--purple-400); text-decoration: none;
+  border-bottom: 1px solid rgba(192,132,252,0.3);
+  transition: border-color 0.2s;
+}
+.legal-section a:hover { border-color: var(--purple-400); }
+
+.highlight-box {
+  background: var(--bg-card); border: 1px solid var(--border-accent);
+  border-radius: var(--radius-md); padding: 24px; margin: 20px 0;
+}
+
+/* ═══ TABLE ═══ */
+.data-table {
+  width: 100%; border-collapse: collapse; margin: 20px 0;
+  border-radius: var(--radius-md); overflow: hidden;
+  border: 1px solid var(--border-subtle);
+}
+.data-table th {
+  background: var(--bg-card); color: var(--purple-400);
+  font-size: 12px; font-weight: 700; text-transform: uppercase;
+  letter-spacing: 1px; padding: 14px 16px; text-align: left;
+  border-bottom: 1px solid var(--border-accent);
+}
+.data-table td {
+  padding: 12px 16px; font-size: 14px; border-bottom: 1px solid var(--border-subtle);
+  vertical-align: top;
+}
+.data-table tr:last-child td { border-bottom: none; }
+.data-table tr:hover td { background: rgba(168,85,247,0.04); }
+
+/* ═══ TOC ═══ */
+.toc {
+  background: var(--bg-card); border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg); padding: 32px; margin-bottom: 64px;
+}
+.toc h3 {
+  font-size: 14px; font-weight: 700; text-transform: uppercase;
+  letter-spacing: 1.5px; color: var(--text-muted); margin-bottom: 16px;
+}
+.toc ol {
+  list-style: none; counter-reset: toc; columns: 2; column-gap: 32px;
+}
+.toc ol li {
+  counter-increment: toc; margin-bottom: 8px;
+}
+.toc ol li a {
+  color: var(--text-secondary); text-decoration: none; font-size: 14px;
+  font-weight: 500; display: flex; align-items: center; gap: 8px;
+  transition: color 0.2s;
+}
+.toc ol li a::before {
+  content: counter(toc, decimal-leading-zero);
+  color: var(--purple-500); font-weight: 700; font-size: 12px;
+  min-width: 24px;
+}
+.toc ol li a:hover { color: var(--purple-400); }
+
+/* ═══ FOOTER ═══ */
+.legal-footer {
+  border-top: 1px solid var(--border-subtle);
+  padding: 40px 0; text-align: center;
+}
+.legal-footer p {
+  font-size: 13px; color: var(--text-muted);
+}
+.legal-footer a { color: var(--purple-400); text-decoration: none; }
+
+@media (max-width: 640px) {
+  .toc ol { columns: 1; }
+  .hero { padding: 130px 0 60px; }
+  .content-wrap { padding: 0 20px 80px; }
+  .data-table { font-size: 13px; }
+  .data-table th, .data-table td { padding: 10px 12px; }
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="goxi-landing.html" class="nav-logo"><span>Goxi</span></a>
+    <a href="goxi-landing.html" class="nav-back">← Back to Home</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <p class="updated">Last updated: February 25, 2026</p>
+  <h1>Privacy Policy</h1>
+</header>
+
+<main class="content-wrap">
+
+  <nav class="toc">
+    <h3>Table of Contents</h3>
+    <ol>
+      <li><a href="#intro">Introduction</a></li>
+      <li><a href="#collect">Information We Collect</a></li>
+      <li><a href="#use">How We Use Your Information</a></li>
+      <li><a href="#categories">Categories of Personal Data</a></li>
+      <li><a href="#share">How We Share Information</a></li>
+      <li><a href="#retention">Data Retention</a></li>
+      <li><a href="#cookies">Cookies &amp; Tracking</a></li>
+      <li><a href="#security">Data Security</a></li>
+      <li><a href="#rights">Your Rights &amp; Choices</a></li>
+      <li><a href="#international">International Transfers</a></li>
+      <li><a href="#children">Children's Privacy</a></li>
+      <li><a href="#ai">AI &amp; Machine Learning</a></li>
+      <li><a href="#changes">Changes to This Policy</a></li>
+      <li><a href="#contact">Contact Us</a></li>
+    </ol>
+  </nav>
+
+  <!-- 1 -->
+  <section class="legal-section" id="intro">
+    <h2>1. Introduction</h2>
+    <p>Xtok Inc. ("Company," "we," "us") operates the Goxi platform. This Privacy Policy explains how we collect, use, share, and protect your personal information when you use our Service. We are committed to transparency and to protecting your data.</p>
+    <p>By using Goxi, you consent to the practices described in this Policy. If you do not agree, please discontinue use of the Service.</p>
+  </section>
+
+  <!-- 2 -->
+  <section class="legal-section" id="collect">
+    <h2>2. Information We Collect</h2>
+
+    <h3>Information You Provide</h3>
+    <ul>
+      <li>Account details — name, email address, payment information.</li>
+      <li>Content you upload — videos, images, scripts, brand assets.</li>
+      <li>Workspace settings — preferences, integration configurations, team roles.</li>
+      <li>Communications — support requests, feedback, survey responses.</li>
+    </ul>
+
+    <h3>Information Collected Automatically</h3>
+    <ul>
+      <li>Device data — browser type, operating system, IP address.</li>
+      <li>Usage data — features used, Crew interactions, content generated, session duration.</li>
+      <li>Analytics — performance metrics, error logs, aggregated usage patterns.</li>
+    </ul>
+
+    <h3>Information from Third Parties</h3>
+    <p>When you connect third-party platforms (YouTube, Instagram, TikTok, Slack, etc.), we receive data authorized through those integrations, such as channel analytics, engagement metrics, and content metadata.</p>
+  </section>
+
+  <!-- 3 -->
+  <section class="legal-section" id="use">
+    <h2>3. How We Use Your Information</h2>
+    <ul>
+      <li><strong>Service Delivery</strong> — operating your Workspace, running Crew agents, processing and distributing content.</li>
+      <li><strong>Improvement</strong> — analyzing usage patterns to enhance features, train models, and improve content quality.</li>
+      <li><strong>Communication</strong> — sending account notices, product updates, and responding to support requests.</li>
+      <li><strong>Security</strong> — detecting fraud, preventing abuse, and protecting the integrity of the Service.</li>
+      <li><strong>Legal Compliance</strong> — fulfilling legal obligations and responding to lawful requests.</li>
+    </ul>
+  </section>
+
+  <!-- 4 -->
+  <section class="legal-section" id="categories">
+    <h2>4. Categories of Personal Data</h2>
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Category</th>
+          <th>Examples</th>
+          <th>Purpose</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Identifiers</td>
+          <td>Name, email, IP address</td>
+          <td>Account management, authentication</td>
+        </tr>
+        <tr>
+          <td>Financial</td>
+          <td>Payment method, billing address</td>
+          <td>Subscription processing</td>
+        </tr>
+        <tr>
+          <td>Usage Data</td>
+          <td>Features used, session logs</td>
+          <td>Service improvement, analytics</td>
+        </tr>
+        <tr>
+          <td>Content Data</td>
+          <td>Uploaded videos, generated assets</td>
+          <td>AI processing, content delivery</td>
+        </tr>
+        <tr>
+          <td>Device Info</td>
+          <td>Browser, OS, screen resolution</td>
+          <td>Compatibility, troubleshooting</td>
+        </tr>
+        <tr>
+          <td>Integration Data</td>
+          <td>Platform analytics, tokens</td>
+          <td>Third-party service connectivity</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- 5 -->
+  <section class="legal-section" id="share">
+    <h2>5. How We Share Information</h2>
+    <p>We do not sell your personal information. We may share data with:</p>
+    <ul>
+      <li><strong>Service Providers</strong> — cloud hosting, payment processing, analytics, and AI model providers who process data on our behalf under contractual obligations.</li>
+      <li><strong>Third-Party Integrations</strong> — platforms you explicitly connect to your Workspace (YouTube, Instagram, TikTok, Slack, etc.).</li>
+      <li><strong>Legal Requirements</strong> — when required by law, subpoena, or government request.</li>
+      <li><strong>Business Transfers</strong> — in connection with a merger, acquisition, or sale of assets, with notice to you.</li>
+    </ul>
+  </section>
+
+  <!-- 6 -->
+  <section class="legal-section" id="retention">
+    <h2>6. Data Retention</h2>
+    <p>We retain your data for as long as your account is active and as needed to provide the Service. After account termination, we retain data for up to 30 days before permanent deletion, unless longer retention is required by law or necessary to resolve disputes.</p>
+    <p>Aggregated, anonymized data that cannot identify you may be retained indefinitely for analytics and service improvement.</p>
+  </section>
+
+  <!-- 7 -->
+  <section class="legal-section" id="cookies">
+    <h2>7. Cookies &amp; Tracking</h2>
+    <p>We use cookies and similar technologies for authentication, preferences, analytics, and security. You can manage cookie preferences through your browser settings. Disabling certain cookies may limit Service functionality.</p>
+    <p>We use analytics providers to understand how users interact with the Service. These tools may collect information sent by your browser, including page views and feature usage.</p>
+  </section>
+
+  <!-- 8 -->
+  <section class="legal-section" id="security">
+    <h2>8. Data Security</h2>
+    <p>We implement industry-standard measures to protect your data, including encryption in transit (TLS 1.2+) and at rest (AES-256), access controls, regular security audits, and incident response procedures.</p>
+    <p>No method of transmission or storage is 100% secure. If you become aware of a security vulnerability, please report it to <a href="mailto:security@goxi.ai">security@goxi.ai</a>.</p>
+  </section>
+
+  <!-- 9 -->
+  <section class="legal-section" id="rights">
+    <h2>9. Your Rights &amp; Choices</h2>
+    <p>Depending on your jurisdiction, you may have the right to:</p>
+    <ul>
+      <li><strong>Access</strong> — request a copy of your personal data.</li>
+      <li><strong>Correction</strong> — update inaccurate or incomplete data.</li>
+      <li><strong>Deletion</strong> — request removal of your personal data.</li>
+      <li><strong>Portability</strong> — receive your data in a structured, machine-readable format.</li>
+      <li><strong>Opt-Out</strong> — unsubscribe from marketing communications at any time.</li>
+      <li><strong>Restriction</strong> — limit certain processing of your data (GDPR).</li>
+    </ul>
+    <p>To exercise any of these rights, contact us at <a href="mailto:privacy@goxi.ai">privacy@goxi.ai</a>. We will respond within 30 days. California residents have additional rights under the CCPA, including the right to know what data is collected and the right to opt out of data sales (we do not sell data).</p>
+  </section>
+
+  <!-- 10 -->
+  <section class="legal-section" id="international">
+    <h2>10. International Transfers</h2>
+    <p>Your data may be transferred to and processed in the United States or other countries where our service providers operate. We ensure appropriate safeguards are in place, including Standard Contractual Clauses (SCCs) for transfers from the EEA/UK.</p>
+  </section>
+
+  <!-- 11 -->
+  <section class="legal-section" id="children">
+    <h2>11. Children's Privacy</h2>
+    <p>Goxi is not directed to children under 18. We do not knowingly collect personal information from minors. If we become aware that we have collected data from a child, we will promptly delete it. If you believe a child has provided us with personal data, please contact <a href="mailto:privacy@goxi.ai">privacy@goxi.ai</a>.</p>
+  </section>
+
+  <!-- 12 -->
+  <section class="legal-section" id="ai">
+    <h2>12. AI &amp; Machine Learning</h2>
+    <div class="highlight-box">
+      <p>Goxi uses AI models to process your content and generate outputs. Your User Content may be used to improve the quality and relevance of AI outputs within your Workspace. We do not use your content to train general-purpose AI models shared with other customers without your explicit consent.</p>
+    </div>
+    <p>AI processing is integral to the Service. If you have concerns about how your data is used for AI purposes, please contact our Data Protection Officer at <a href="mailto:dpo@goxi.ai">dpo@goxi.ai</a>.</p>
+  </section>
+
+  <!-- 13 -->
+  <section class="legal-section" id="changes">
+    <h2>13. Changes to This Policy</h2>
+    <p>We may update this Privacy Policy from time to time. We will notify you of material changes via email or in-product notice at least 15 days before they take effect. The "Last updated" date at the top reflects the most recent revision.</p>
+  </section>
+
+  <!-- 14 -->
+  <section class="legal-section" id="contact">
+    <h2>14. Contact Us</h2>
+    <p>If you have questions about this Privacy Policy or how we handle your data:</p>
+    <div class="highlight-box">
+      <p><strong>Xtok Inc.</strong><br>
+      Privacy: <a href="mailto:privacy@goxi.ai">privacy@goxi.ai</a><br>
+      DPO: <a href="mailto:dpo@goxi.ai">dpo@goxi.ai</a><br>
+      Support: <a href="mailto:support@goxi.ai">support@goxi.ai</a><br>
+      Website: <a href="https://goxi.ai">goxi.ai</a></p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="legal-footer">
+  <div class="content-wrap">
+    <p>&copy; 2026 Xtok Inc. All rights reserved. &nbsp;|&nbsp; <a href="privacy.html">Privacy Policy</a> &nbsp;|&nbsp; <a href="terms.html">Terms of Use</a></p>
+  </div>
+</footer>
+
+</body>
+</html>
