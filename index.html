@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Goxi — Your Ghost-Team of AI Agents for Content Creators</title>
 <meta name="description" content="Goxi replaces your $5,000/mo agency with an AI ghost-team that runs your content operations 24/7. Zero prompting. Save 20+ hours/week.">
+<link rel="icon" type="image/png" href="goxi1.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
@@ -82,6 +83,17 @@ body {
 .text-purple { color: var(--purple-400); }
 .text-orange { color: var(--goxi-orange); }
 .text-muted { color: var(--text-secondary); }
+
+.goxi-icon {
+  display: inline-block; vertical-align: middle;
+  filter: brightness(0) invert(1);
+}
+.goxi-icon-orange {
+  filter: brightness(0) invert(52%) sepia(96%) saturate(1500%) hue-rotate(2deg) brightness(103%);
+}
+.goxi-icon-sm { height: 16px; width: auto; }
+.goxi-icon-md { height: 24px; width: auto; }
+.goxi-icon-lg { height: 32px; width: auto; }
 
 .badge {
   display: inline-flex; align-items: center; gap: 6px;
@@ -166,14 +178,9 @@ body {
   display: flex; align-items: center; gap: 10px;
   text-decoration: none;
 }
-.nav-logo-icon {
-  width: 36px; height: 36px; border-radius: 10px;
-  background: var(--gradient-orange);
-  display: flex; align-items: center; justify-content: center;
-  font-weight: 800; font-size: 16px; color: #fff;
-  box-shadow: 0 0 20px rgba(255,107,44,0.25);
+.nav-logo-img {
+  height: 40px; width: auto;
 }
-.nav-logo-text { font-size: 20px; font-weight: 700; color: #fff; letter-spacing: -0.02em; }
 .nav-links { display: flex; align-items: center; gap: 32px; }
 .nav-links a { color: var(--text-secondary); text-decoration: none; font-size: 14px; font-weight: 500; transition: color 0.2s; }
 .nav-links a:hover { color: #fff; }
@@ -727,12 +734,8 @@ body {
 }
 .footer-left { display: flex; align-items: center; gap: 8px; }
 .footer-logo {
-  width: 28px; height: 28px; border-radius: 8px;
-  background: var(--gradient-orange);
-  display: flex; align-items: center; justify-content: center;
-  font-weight: 800; font-size: 12px; color: #fff;
+  height: 28px; width: auto;
 }
-.footer-brand { font-weight: 600; font-size: 15px; }
 .footer-links { display: flex; gap: 24px; }
 .footer-links a { color: var(--text-muted); text-decoration: none; font-size: 13px; transition: color 0.2s; }
 .footer-links a:hover { color: var(--text-secondary); }
@@ -843,14 +846,53 @@ body {
   .comp-header, .comp-row { grid-template-columns: 2fr 1fr 1fr 1fr; font-size: 12px; padding: 12px 16px; }
   .stats-bar { grid-template-columns: repeat(2, 1fr); }
   .nav-links { display: none; }
+  .nav-cta .btn-ghost { display: none; }
   .wf-outputs-grid { grid-template-columns: repeat(2, 1fr); }
+  .section { padding: 72px 0; }
+  .waterfall-visual { padding: 28px; }
 }
 @media (max-width: 600px) {
+  .container { padding: 0 16px; }
+  .navbar { padding: 10px 0; }
+  .navbar-inner { padding: 0 16px; }
+  .nav-logo-img { height: 32px; }
+  .nav-cta .btn { padding: 8px 16px !important; font-size: 12px !important; }
+  .nav-cta .btn svg { width: 14px; height: 14px; }
+
+  .hero { min-height: auto; padding-top: 100px; padding-bottom: 40px; }
+  .hero-title { font-size: 32px !important; }
+  .hero-subtitle { font-size: 15px; margin-bottom: 28px; }
+  .hero-audit-form { flex-direction: column; border-radius: var(--radius-lg); padding: 8px; }
+  .hero-input { padding: 12px 16px; text-align: center; }
+  .hero-audit-btn { width: 100%; justify-content: center; border-radius: var(--radius-md) !important; }
+  .hero-proof { flex-direction: column; gap: 12px; }
+
   .agents-grid { grid-template-columns: 1fr; }
-  .hero-title { font-size: 36px; }
-  .stats-bar { grid-template-columns: 1fr; }
+  .section-title { font-size: 28px !important; }
+  .section-subtitle { font-size: 15px; }
+  .section { padding: 56px 0; }
+
+  .stats-bar { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+  .stat-number { font-size: 36px; }
+
+  .demo-msgs { padding: 16px; }
+  .demo-msg { max-width: 92%; }
+
+  .waterfall-visual { padding: 20px; border-radius: var(--radius-lg); }
+  .wf-outputs-grid { grid-template-columns: 1fr 1fr; gap: 8px; }
+  .wf-mini { padding: 10px 12px; font-size: 12px; }
+
+  .price-card { padding: 28px 20px; }
+  .price-amount { font-size: 40px; }
+
+  .comp-header, .comp-row { padding: 10px 12px; font-size: 11px; gap: 4px; }
+
+  .cta-title { font-size: 28px !important; }
+  .cta-subtitle { font-size: 15px; }
+
   .footer-inner { flex-direction: column; gap: 16px; text-align: center; }
   .footer-links { flex-wrap: wrap; justify-content: center; }
+  .footer-logo { height: 24px; }
 }
 </style>
 </head>
@@ -860,8 +902,7 @@ body {
 <nav class="navbar">
   <div class="navbar-inner">
     <a href="#" class="nav-logo">
-      <div class="nav-logo-icon">G</div>
-      <span class="nav-logo-text">Goxi</span>
+      <img src="logo black bg.svg" alt="Goxi" class="nav-logo-img">
     </a>
     <div class="nav-links">
       <a href="#agents">Ghost-Team</a>
@@ -944,7 +985,7 @@ body {
     <div class="marquee-item"><span class="sep">◆</span></div>
     <div class="marquee-item">🧠 Zero Prompting AI</div>
     <div class="marquee-item"><span class="sep">◆</span></div>
-    <div class="marquee-item">👻 Ghost-Team Agents</div>
+    <div class="marquee-item"><img src="goxi1.png" alt="" class="goxi-icon goxi-icon-sm"> Ghost-Team Agents</div>
     <div class="marquee-item"><span class="sep">◆</span></div>
     <div class="marquee-item">📊 Channel Analytics</div>
     <div class="marquee-item"><span class="sep">◆</span></div>
@@ -961,7 +1002,7 @@ body {
     <div class="marquee-item"><span class="sep">◆</span></div>
     <div class="marquee-item">🧠 Zero Prompting AI</div>
     <div class="marquee-item"><span class="sep">◆</span></div>
-    <div class="marquee-item">👻 Ghost-Team Agents</div>
+    <div class="marquee-item"><img src="goxi1.png" alt="" class="goxi-icon goxi-icon-sm"> Ghost-Team Agents</div>
     <div class="marquee-item"><span class="sep">◆</span></div>
     <div class="marquee-item">📊 Channel Analytics</div>
     <div class="marquee-item"><span class="sep">◆</span></div>
@@ -1002,7 +1043,7 @@ body {
         <p>Researching trends, writing scripts, editing thumbnails, repurposing for 5 platforms — the ops never stop.</p>
       </div>
       <div class="problem-card is-good fade-up fade-up-delay-4">
-        <div class="problem-icon">👻</div>
+        <div class="problem-icon"><img src="goxi1.png" alt="Goxi" class="goxi-icon goxi-icon-lg"></div>
         <h3>What if you had an invisible crew?</h3>
         <p>A ghost-team that already knows your style, analyzes what works, writes in your voice, and delivers ready-to-publish content — before you even ask.</p>
       </div>
@@ -1116,7 +1157,7 @@ body {
         </div>
         <div class="wf-arrow">→</div>
         <div class="wf-node" style="border-color:rgba(255,107,44,0.2);">
-          <span class="wf-icon">👻</span>
+          <span class="wf-icon"><img src="goxi1.png" alt="Goxi" class="goxi-icon goxi-icon-lg"></span>
           <span style="color:var(--goxi-orange);font-size:12px;">Goxi Processes</span>
         </div>
         <div class="wf-arrow">→</div>
@@ -1428,15 +1469,14 @@ body {
   <div class="container">
     <div class="footer-inner">
       <div class="footer-left">
-        <div class="footer-logo">G</div>
-        <span class="footer-brand">Goxi</span>
+        <img src="logo black bg.svg" alt="Goxi" class="footer-logo">
       </div>
       <div class="footer-links">
         <a href="terms.html">Terms of Use</a>
         <a href="privacy.html">Privacy Policy</a>
         <a href="mailto:hello@goxi.ai">Contact</a>
       </div>
-      <div class="footer-copy">© 2026 Goxi Inc. All rights reserved.</div>
+      <div class="footer-copy">© 2026 Xtok, Inc. All rights reserved.</div>
     </div>
   </div>
 </footer>
