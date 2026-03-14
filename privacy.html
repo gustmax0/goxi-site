@@ -130,6 +130,13 @@ body {
   background: var(--bg-card); border: 1px solid var(--border-glow);
   border-radius: var(--radius-md); padding: 24px; margin: 20px 0;
 }
+.highlight-box.yt-api {
+  border-color: rgba(255,0,0,0.25);
+}
+.yt-api-label {
+  font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 0.12em; color: #FF4444; margin-bottom: 10px;
+}
 
 /* ═══ TABLE ═══ */
 .data-table {
@@ -218,7 +225,7 @@ body {
 </nav>
 
 <header class="hero">
-  <p class="updated">Last updated: February 25, 2026</p>
+  <p class="updated">Last updated: March 14, 2026</p>
   <h1>Privacy Policy</h1>
 </header>
 
@@ -229,10 +236,11 @@ body {
     <ol>
       <li><a href="#intro">Introduction</a></li>
       <li><a href="#collect">Information We Collect</a></li>
+      <li><a href="#youtube-api">YouTube API Data</a></li>
       <li><a href="#use">How We Use Your Information</a></li>
       <li><a href="#categories">Categories of Personal Data</a></li>
       <li><a href="#share">How We Share Information</a></li>
-      <li><a href="#retention">Data Retention</a></li>
+      <li><a href="#retention">Data Retention &amp; Caching</a></li>
       <li><a href="#cookies">Cookies &amp; Tracking</a></li>
       <li><a href="#security">Data Security</a></li>
       <li><a href="#rights">Your Rights &amp; Choices</a></li>
@@ -246,8 +254,12 @@ body {
 
   <section class="legal-section" id="intro">
     <h2>1. Introduction</h2>
-    <p>Xtok Inc. ("Company," "we," "us") operates the Goxi platform. This Privacy Policy explains how we collect, use, share, and protect your personal information when you use our Service. We are committed to transparency and to protecting your data.</p>
+    <p>Xtok Inc. ("Company," "we," "us") operates the Goxi platform at <a href="https://goxi.ai">goxi.ai</a>. This Privacy Policy explains how we collect, use, share, and protect your personal information when you use our Service. We are committed to transparency and to protecting your data.</p>
     <p>By using Goxi, you consent to the practices described in this Policy. If you do not agree, please discontinue use of the Service.</p>
+    <div class="highlight-box yt-api">
+      <p class="yt-api-label">&#9632; YouTube API Services</p>
+      <p>Goxi uses the YouTube Data API v3. Our collection, use, and storage of information obtained from YouTube APIs is governed by — and fully complies with — the <a href="https://developers.google.com/youtube/terms/api-services-terms-of-service" target="_blank" rel="noopener">YouTube API Services Terms of Service</a> and the <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy</a>. See <a href="#youtube-api">Section 3</a> for the complete YouTube API data disclosure.</p>
+    </div>
   </section>
 
   <section class="legal-section" id="collect">
@@ -272,8 +284,97 @@ body {
     <p>When you connect third-party platforms (YouTube, Instagram, TikTok, Slack, etc.), we receive data authorized through those integrations, such as channel analytics, engagement metrics, and content metadata.</p>
   </section>
 
+  <section class="legal-section" id="youtube-api">
+    <h2>3. YouTube API Data</h2>
+
+    <div class="highlight-box yt-api">
+      <p class="yt-api-label">&#9632; YouTube API Compliance Disclosure</p>
+      <p>Our use of information received from YouTube APIs adheres strictly to the <a href="https://developers.google.com/youtube/terms/api-services-terms-of-service" target="_blank" rel="noopener">YouTube API Services Terms of Service</a> and the <a href="https://developers.google.com/youtube/terms/developer-policies" target="_blank" rel="noopener">YouTube API Developer Policies</a>.</p>
+    </div>
+
+    <h3>3.1 What YouTube Data We Access</h3>
+    <p>When generating a creator report, Goxi calls the YouTube Data API v3 to retrieve <strong>publicly available</strong> channel and video data. No private, unlisted, or subscriber-only content is accessed. The following endpoints and data fields are used:</p>
+
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>API Endpoint</th>
+          <th>Data Retrieved</th>
+          <th>Purpose in Report</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>channels.list</td>
+          <td>Channel name, handle, subscriber count, total views, video count, country, description, keywords, topic categories, avatar URL</td>
+          <td>Channel snapshot header section</td>
+        </tr>
+        <tr>
+          <td>playlistItems.list</td>
+          <td>Video IDs, titles, publish dates, thumbnail URLs</td>
+          <td>Upload timeline, frequency analysis, content pattern detection</td>
+        </tr>
+        <tr>
+          <td>videos.list</td>
+          <td>View count, like count, comment count, video duration, tags, category per video</td>
+          <td>Performance scoring, top videos table, format mix analysis</td>
+        </tr>
+        <tr>
+          <td>search.list</td>
+          <td>Video and channel IDs matching content phrases from the creator's niche</td>
+          <td>Similar channel discovery section</td>
+        </tr>
+        <tr>
+          <td>commentThreads.list</td>
+          <td>Top public comments, like counts on comments, comment text</td>
+          <td>Audience sentiment analysis for AI-generated insights</td>
+        </tr>
+        <tr>
+          <td>channels.list (competitor batch)</td>
+          <td>Subscriber count, total views, avatar, description of discovered competitor channels</td>
+          <td>Competitor benchmarking section</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>3.2 What We Do NOT Do With YouTube Data</h3>
+    <ul>
+      <li>We do <strong>not</strong> download, store, cache, or redistribute raw video files or audio streams.</li>
+      <li>We do <strong>not</strong> sell, rent, or license YouTube API data to any third party.</li>
+      <li>We do <strong>not</strong> use YouTube API data to build a competing video platform or replicate the YouTube viewing experience.</li>
+      <li>We do <strong>not</strong> access private, unlisted, or members-only video content.</li>
+      <li>We do <strong>not</strong> use YouTube data for advertising targeting or user profiling unrelated to the creator's own channel analytics.</li>
+      <li>We do <strong>not</strong> store YouTube API data beyond the caching periods defined in <a href="#retention">Section 6</a>.</li>
+    </ul>
+
+    <h3>3.3 Caching of YouTube API Responses</h3>
+    <p>To reduce redundant API calls and comply with YouTube's quota policies, we cache API responses as follows:</p>
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Data Type</th>
+          <th>Cache Duration</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Channel statistics and video metrics</td><td>24 hours</td></tr>
+        <tr><td>Competitor search results</td><td>7 days</td></tr>
+        <tr><td>Full report JSON</td><td>14 days (invalidated when a new video is published)</td></tr>
+        <tr><td>Generated thumbnail images</td><td>30 days</td></tr>
+      </tbody>
+    </table>
+    <p>After each cache period expires, data is either refreshed from the API or permanently deleted if the report is no longer active.</p>
+
+    <h3>3.4 OAuth-Connected Channels (Optional)</h3>
+    <p>If you choose to connect your own YouTube channel via Google OAuth, we request access to YouTube Analytics data (audience retention, CTR, traffic sources) for your channel only. This connection is entirely optional — the core public report works without it.</p>
+    <p>You can revoke Goxi's YouTube access at any time by visiting <a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener">myaccount.google.com/permissions</a> and removing Goxi. Revocation is immediate and does not require contacting us.</p>
+
+    <h3>3.5 YouTube Branding and Attribution</h3>
+    <p>All data sourced from YouTube APIs is displayed in full compliance with <a href="https://developers.google.com/youtube/terms/branding-guidelines" target="_blank" rel="noopener">YouTube's Branding Guidelines</a>. Reports include links that direct users to the original YouTube channel and video pages. We do not modify, misrepresent, or decontextualize YouTube content.</p>
+  </section>
+
   <section class="legal-section" id="use">
-    <h2>3. How We Use Your Information</h2>
+    <h2>4. How We Use Your Information</h2>
     <ul>
       <li><strong>Service Delivery</strong> — operating your Workspace, running Crew agents, processing and distributing content.</li>
       <li><strong>Improvement</strong> — analyzing usage patterns to enhance features, train models, and improve content quality.</li>
@@ -284,7 +385,7 @@ body {
   </section>
 
   <section class="legal-section" id="categories">
-    <h2>4. Categories of Personal Data</h2>
+    <h2>5. Categories of Personal Data</h2>
     <table class="data-table">
       <thead>
         <tr>
@@ -329,7 +430,7 @@ body {
   </section>
 
   <section class="legal-section" id="share">
-    <h2>5. How We Share Information</h2>
+    <h2>6. How We Share Information</h2>
     <p>We do not sell your personal information. We may share data with:</p>
     <ul>
       <li><strong>Service Providers</strong> — cloud hosting, payment processing, analytics, and AI model providers who process data on our behalf under contractual obligations.</li>
@@ -340,25 +441,25 @@ body {
   </section>
 
   <section class="legal-section" id="retention">
-    <h2>6. Data Retention</h2>
+    <h2>7. Data Retention</h2>
     <p>We retain your data for as long as your account is active and as needed to provide the Service. After account termination, we retain data for up to 30 days before permanent deletion, unless longer retention is required by law or necessary to resolve disputes.</p>
     <p>Aggregated, anonymized data that cannot identify you may be retained indefinitely for analytics and service improvement.</p>
   </section>
 
   <section class="legal-section" id="cookies">
-    <h2>7. Cookies &amp; Tracking</h2>
+    <h2>8. Cookies &amp; Tracking</h2>
     <p>We use cookies and similar technologies for authentication, preferences, analytics, and security. You can manage cookie preferences through your browser settings. Disabling certain cookies may limit Service functionality.</p>
     <p>We use analytics providers to understand how users interact with the Service. These tools may collect information sent by your browser, including page views and feature usage.</p>
   </section>
 
   <section class="legal-section" id="security">
-    <h2>8. Data Security</h2>
+    <h2>9. Data Security</h2>
     <p>We implement industry-standard measures to protect your data, including encryption in transit (TLS 1.2+) and at rest (AES-256), access controls, regular security audits, and incident response procedures.</p>
     <p>No method of transmission or storage is 100% secure. If you become aware of a security vulnerability, please report it to <a href="mailto:security@goxi.ai">security@goxi.ai</a>.</p>
   </section>
 
   <section class="legal-section" id="rights">
-    <h2>9. Your Rights &amp; Choices</h2>
+    <h2>10. Your Rights &amp; Choices</h2>
     <p>Depending on your jurisdiction, you may have the right to:</p>
     <ul>
       <li><strong>Access</strong> — request a copy of your personal data.</li>
@@ -372,17 +473,17 @@ body {
   </section>
 
   <section class="legal-section" id="international">
-    <h2>10. International Transfers</h2>
+    <h2>11. International Transfers</h2>
     <p>Your data may be transferred to and processed in the United States or other countries where our service providers operate. We ensure appropriate safeguards are in place, including Standard Contractual Clauses (SCCs) for transfers from the EEA/UK.</p>
   </section>
 
   <section class="legal-section" id="children">
-    <h2>11. Children's Privacy</h2>
+    <h2>12. Children's Privacy</h2>
     <p>Goxi is not directed to children under 18. We do not knowingly collect personal information from minors. If we become aware that we have collected data from a child, we will promptly delete it. If you believe a child has provided us with personal data, please contact <a href="mailto:privacy@goxi.ai">privacy@goxi.ai</a>.</p>
   </section>
 
   <section class="legal-section" id="ai">
-    <h2>12. AI &amp; Machine Learning</h2>
+    <h2>13. AI &amp; Machine Learning</h2>
     <div class="highlight-box">
       <p>Goxi uses AI models to process your content and generate outputs. Your User Content may be used to improve the quality and relevance of AI outputs within your Workspace. We do not use your content to train general-purpose AI models shared with other customers without your explicit consent.</p>
     </div>
@@ -390,12 +491,12 @@ body {
   </section>
 
   <section class="legal-section" id="changes">
-    <h2>13. Changes to This Policy</h2>
+    <h2>14. Changes to This Policy</h2>
     <p>We may update this Privacy Policy from time to time. We will notify you of material changes via email or in-product notice at least 15 days before they take effect. The "Last updated" date at the top reflects the most recent revision.</p>
   </section>
 
   <section class="legal-section" id="contact">
-    <h2>14. Contact Us</h2>
+    <h2>15. Contact Us</h2>
     <p>If you have questions about this Privacy Policy or how we handle your data:</p>
     <div class="highlight-box">
       <p><strong>Xtok, Inc.</strong><br>
